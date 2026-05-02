@@ -3,15 +3,11 @@
 import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { X } from "lucide-react"
-import { useMemo, useState } from "react"
+import { useState } from "react"
 
-import { galleryImages, type GalleryCategory } from "@/data/site"
-import { Button } from "@/components/ui/button"
+import { galleryImages } from "@/data/site"
 import { PageShell } from "@/components/page-shell"
 import { SectionHeading } from "@/components/section-heading"
-import { cn } from "@/lib/utils"
-
-const filters: Array<GalleryCategory | "All"> = ["All", "Food", "Drinks", "Interior"]
 
 export function GalleryMasonry({
   title = "A visual story full of color, texture, and late-night energy.",
@@ -22,51 +18,27 @@ export function GalleryMasonry({
   description?: string
   limit?: number
 }) {
-  const [activeFilter, setActiveFilter] = useState<GalleryCategory | "All">("All")
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
-  const filteredImages = useMemo(() => {
-    const images =
-      activeFilter === "All"
-        ? galleryImages
-        : galleryImages.filter((image) => image.category === activeFilter)
-
-    return typeof limit === "number" ? images.slice(0, limit) : images
-  }, [activeFilter, limit])
+  const visibleImages =
+    typeof limit === "number" ? galleryImages.slice(0, limit) : galleryImages
 
   return (
     <section className="bg-[color:var(--color-charcoal)] py-20 text-white sm:py-24">
       <PageShell>
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
           <SectionHeading
             eyebrow="Gallery"
             title={title}
             description={description}
             theme="dark"
           />
-          <div className="flex flex-wrap gap-3">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                type="button"
-                onClick={() => setActiveFilter(filter)}
-                className={cn(
-                  "rounded-full border px-4 py-2 text-sm transition",
-                  activeFilter === filter
-                    ? "border-[color:var(--color-gold)] bg-[color:var(--color-gold)] text-[color:var(--color-charcoal)]"
-                    : "border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
-                )}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
         </div>
 
         <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3">
-          {filteredImages.map((image, index) => (
+          {visibleImages.map((image, index) => (
             <button
-              key={`${image.src}-${activeFilter}`}
+              key={image.src}
               type="button"
               className="group mb-5 block w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 text-left"
               onClick={() => setActiveIndex(index)}
@@ -119,8 +91,8 @@ export function GalleryMasonry({
               </button>
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={filteredImages[activeIndex].src}
-                  alt={filteredImages[activeIndex].alt}
+                  src={visibleImages[activeIndex].src}
+                  alt={visibleImages[activeIndex].alt}
                   fill
                   className="object-contain"
                   sizes="100vw"
@@ -128,10 +100,10 @@ export function GalleryMasonry({
               </div>
               <div className="space-y-2 border-t border-white/10 p-6">
                 <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]">
-                  {filteredImages[activeIndex].category}
+                  {visibleImages[activeIndex].category}
                 </p>
                 <p className="text-lg text-white/85">
-                  {filteredImages[activeIndex].alt}
+                  {visibleImages[activeIndex].alt}
                 </p>
               </div>
             </motion.div>
