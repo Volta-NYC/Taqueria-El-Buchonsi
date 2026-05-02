@@ -56,7 +56,7 @@ export const navigationLinks = [
   { href: "/menu", label: "Menu" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact & Catering" },
 ]
 
 export const featuredDishes = [

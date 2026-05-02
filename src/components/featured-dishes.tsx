@@ -20,7 +20,7 @@ export function FeaturedDishes() {
           {featuredDishes.map((dish) => (
             <article
               key={dish.name}
-              className="group overflow-hidden rounded-[2rem] border border-[color:var(--color-sand-line)] bg-white shadow-[0_20px_60px_rgba(17,17,17,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(17,17,17,0.12)]"
+              className="group overflow-hidden rounded-[2rem] border border-[color:var(--color-sand-line)] bg-white shadow-[0_20px_60px_rgba(17,17,17,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[rgba(198,40,40,0.22)] hover:shadow-[0_24px_80px_rgba(17,17,17,0.12)]"
             >
               <div className="relative h-72 overflow-hidden">
                 <Image
@@ -32,6 +32,7 @@ export function FeaturedDishes() {
                 />
               </div>
               <div className="space-y-4 p-7">
+                <div className="h-px w-12 bg-[color:var(--color-gold)] transition-all duration-300 group-hover:w-24" />
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="font-serif-display text-3xl text-[color:var(--color-ink)]">
                     {dish.name}
@@ -43,7 +44,7 @@ export function FeaturedDishes() {
                 <p className="text-sm leading-7 text-[color:var(--color-muted)]">
                   {dish.description}
                 </p>
-                <Link href="/menu" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-red)]">
+                <Link href="/menu" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-red)] transition-transform duration-300 group-hover:translate-x-1">
                   Explore the full menu
                   <ArrowUpRight size={16} />
                 </Link>

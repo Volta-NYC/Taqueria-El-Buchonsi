@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -12,6 +13,7 @@ import { cn } from "@/lib/utils"
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24)
@@ -63,9 +65,18 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="transition hover:text-white"
+                className={cn(
+                  "group relative pb-1.5 transition-colors duration-300 hover:text-white",
+                  pathname === link.href ? "text-white" : "text-white/80"
+                )}
               >
                 {link.label}
+                <span
+                  className={cn(
+                    "absolute inset-x-0 -bottom-0.5 h-px origin-left bg-[color:var(--color-gold)] transition-transform duration-300",
+                    pathname === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  )}
+                />
               </Link>
             ))}
           </nav>
@@ -99,7 +110,10 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="border-b border-white/10 pb-4 font-serif-display text-3xl text-white"
+              className={cn(
+                "border-b border-white/10 pb-4 font-serif-display text-3xl transition-colors duration-300",
+                pathname === link.href ? "text-[color:var(--color-gold)]" : "text-white"
+              )}
               onClick={() => setIsOpen(false)}
             >
               {link.label}
