@@ -1,17 +1,36 @@
+import Image from "next/image"
+
 import { PageShell } from "@/components/page-shell"
 
 export function PageHero({
   eyebrow,
   title,
   description,
+  backgroundImage,
+  backgroundPosition = "center",
 }: {
   eyebrow: string
   title: string
   description: string
+  backgroundImage?: string
+  backgroundPosition?: string
 }) {
   return (
     <section className="relative overflow-hidden bg-[color:var(--color-charcoal)] pb-16 pt-24 text-white sm:pb-20 sm:pt-28">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(217,119,6,0.22),transparent_32%),radial-gradient(circle_at_right,rgba(198,40,40,0.16),transparent_28%)]" />
+      {backgroundImage ? (
+        <div className="absolute inset-0">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-38"
+            style={{ objectPosition: backgroundPosition }}
+          />
+        </div>
+      ) : null}
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(17,17,17,0.94),rgba(17,17,17,0.72),rgba(17,17,17,0.9)),radial-gradient(circle_at_top_left,rgba(217,119,6,0.24),transparent_32%),radial-gradient(circle_at_right,rgba(198,40,40,0.18),transparent_28%)]" />
       <PageShell>
         <div className="relative max-w-4xl">
           <div className="mb-6 flex items-center gap-4">

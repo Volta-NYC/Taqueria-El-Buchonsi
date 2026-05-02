@@ -23,6 +23,8 @@ export default function AboutPage() {
         eyebrow="About Us"
         title="A richer take on the neighborhood taqueria, rooted in tradition."
         description="Taqueria El Buchon combines the energy of Mexican street food with a more polished dining experience that still feels warm, generous, and familiar."
+        backgroundImage="/non.jpg"
+        backgroundPosition="center 45%"
       />
       <section className="bg-white py-16 sm:py-20">
         <PageShell>

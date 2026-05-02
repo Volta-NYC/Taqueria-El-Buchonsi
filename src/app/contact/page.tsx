@@ -21,6 +21,8 @@ export default function ContactPage() {
         eyebrow="Contact & Catering"
         title="Plan a visit, ask about catering, or start a conversation for your next event."
         description="This page now balances restaurant details with a stronger catering message, making it easier for guests to book trays, larger orders, and custom event menus."
+        backgroundImage="/contacthero.jpg"
+        backgroundPosition="center center"
       />
       <section className="bg-[color:var(--color-cream)] py-16 sm:py-20">
         <PageShell>

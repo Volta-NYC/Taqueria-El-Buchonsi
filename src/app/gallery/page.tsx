@@ -16,6 +16,8 @@ export default function GalleryPage() {
         eyebrow="Visual Story"
         title="A gallery that lets the food, color, and atmosphere do the selling."
         description="Built from the restaurant's existing imagery, this experience uses a masonry layout, lightbox viewing, and gentle interactions to create a more premium first impression."
+        backgroundImage="/gallery.avif"
+        backgroundPosition="center center"
       />
       <GalleryMasonry
         title="A full gallery of dishes, drinks, and atmosphere."
