@@ -1,9 +1,10 @@
 "use client"
 
 import { Search } from "lucide-react"
+import Image from "next/image"
 import { useMemo, useState } from "react"
 
-import { menuCategories, menuItems } from "@/data/site"
+import { menuCategories, menuFavorites, menuItems } from "@/data/site"
 import { cn } from "@/lib/utils"
 
 const dietaryColors: Record<string, string> = {
@@ -57,6 +58,51 @@ export function MenuBrowser() {
             {category}
           </button>
         ))}
+      </div>
+
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-10 bg-[color:var(--color-gold)]" />
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-red)]">
+            Favorites
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          {menuFavorites.map((favorite) => (
+            <button
+              key={favorite.title}
+              type="button"
+              onClick={() => setActiveCategory(favorite.targetCategory)}
+              className={cn(
+                "group flex items-center gap-4 rounded-[1.5rem] border bg-white p-3 text-left shadow-[0_12px_30px_rgba(17,17,17,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(198,40,40,0.24)]",
+                activeCategory === favorite.targetCategory
+                  ? "border-[color:var(--color-red)] ring-1 ring-[color:var(--color-red)]/20"
+                  : "border-[color:var(--color-sand-line)]"
+              )}
+            >
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.1rem]">
+                <Image
+                  src={favorite.image}
+                  alt={favorite.title}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="80px"
+                />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[color:var(--color-red)]">
+                  {favorite.categoryLabel}
+                </p>
+                <h3 className="mt-2 font-serif-display text-2xl leading-none text-[color:var(--color-ink)]">
+                  {favorite.title}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-sm leading-6 text-[color:var(--color-muted)]">
+                  {favorite.description}
+                </p>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="grid gap-5 lg:grid-cols-2">

@@ -18,6 +18,14 @@ export type MenuItem = {
   tags?: string[]
 }
 
+export type MenuFavorite = {
+  title: string
+  image: string
+  description: string
+  categoryLabel: string
+  targetCategory: MenuCategory
+}
+
 export const site = {
   name: "Taqueria El Buchon",
   shortName: "El Buchon",
@@ -80,6 +88,57 @@ export const featuredDishes = [
       "A smooth, cooling rice drink that balances the heat and richness of the menu beautifully.",
     price: "$6",
     image: "/drink.jpg",
+  },
+]
+
+export const menuFavorites: MenuFavorite[] = [
+  {
+    title: "Quesadillas",
+    image: "/quesadillas.jpg",
+    description:
+      "Golden, folded, and loaded with melty cheese, richer fillings, and the kind of comfort that anchors the whole menu.",
+    categoryLabel: "Menu Favorite",
+    targetCategory: "Quesadillas",
+  },
+  {
+    title: "Burritos",
+    image: "/burritos.jpg",
+    description:
+      "Rice, beans, cheese, and bold proteins wrapped into a satisfying all-in-one order built for serious cravings.",
+    categoryLabel: "Crowd Favorite",
+    targetCategory: "Burritos",
+  },
+  {
+    title: "Soup",
+    image: "/soup.jpg",
+    description:
+      "Rich consome, birria depth, and warming broths that bring a slower, more comforting side to the menu.",
+    categoryLabel: "Comfort Pick",
+    targetCategory: "Sopas",
+  },
+  {
+    title: "Tacos",
+    image: "/tacos.jpg",
+    description:
+      "Handmade tortillas, layered toppings, and standout proteins that feel vibrant, fresh, and unmistakably Buchon.",
+    categoryLabel: "Signature",
+    targetCategory: "Tacos",
+  },
+  {
+    title: "Drinks",
+    image: "/drink.jpg",
+    description:
+      "From horchata to aguas frescas and Mexican sodas, the drink lineup cools, brightens, and rounds out every meal.",
+    categoryLabel: "Refresh",
+    targetCategory: "Drinks",
+  },
+  {
+    title: "Salad",
+    image: "/salad.jpg",
+    description:
+      "A fresher angle on the menu with crisp greens, guacamole, crema, and the same bold flavor profile throughout.",
+    categoryLabel: "Fresh Favorite",
+    targetCategory: "Taco Salad",
   },
 ]
 
