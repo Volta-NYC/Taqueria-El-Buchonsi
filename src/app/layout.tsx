@@ -7,6 +7,11 @@ import { site } from "@/data/site"
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.sourceUrl),
+  icons: {
+    icon: "/favicon:logo.png",
+    shortcut: "/favicon:logo.png",
+    apple: "/favicon:logo.png",
+  },
   title: {
     default: `${site.name} | Mexican Restaurant in Staten Island`,
     template: `%s | ${site.name}`,
