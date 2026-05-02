@@ -7,7 +7,6 @@ import { GalleryMasonry } from "@/components/gallery-masonry"
 import { HeroSection } from "@/components/hero-section"
 import { PageShell } from "@/components/page-shell"
 import { SectionHeading } from "@/components/section-heading"
-import { Testimonials } from "@/components/testimonials"
 import { Button } from "@/components/ui/button"
 import { site } from "@/data/site"
 
@@ -74,7 +73,6 @@ export default function HomePage() {
       />
 
       <AboutPreview />
-      <Testimonials />
       <CtaBanner />
     </>
   )

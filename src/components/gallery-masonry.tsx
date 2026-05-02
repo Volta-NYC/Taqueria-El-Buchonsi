@@ -42,6 +42,7 @@ export function GalleryMasonry({
             eyebrow="Gallery"
             title={title}
             description={description}
+            theme="dark"
           />
           <div className="flex flex-wrap gap-3">
             {filters.map((filter) => (

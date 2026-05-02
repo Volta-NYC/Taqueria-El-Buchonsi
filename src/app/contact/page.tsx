@@ -10,17 +10,17 @@ import { Button } from "@/components/ui/button"
 import { site } from "@/data/site"
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Contact ${site.name} for directions, hours, private dining, and ordering details.`,
+  title: "Contact & Catering",
+  description: `Contact ${site.name} for directions, hours, catering, private events, and ordering details.`,
 }
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Plan your visit, place an order, or reach out for larger gatherings."
-        description="Every important detail is easy to find here, from directions and hours to direct phone contact and a quick inquiry form."
+        eyebrow="Contact & Catering"
+        title="Plan a visit, ask about catering, or start a conversation for your next event."
+        description="This page now balances restaurant details with a stronger catering message, making it easier for guests to book trays, larger orders, and custom event menus."
       />
       <section className="bg-[color:var(--color-cream)] py-16 sm:py-20">
         <PageShell>
@@ -69,15 +69,30 @@ export default function ContactPage() {
                   </Link>
                 </div>
               </div>
+              <div className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-[color:var(--color-charcoal)] p-8 text-white shadow-[0_20px_60px_rgba(17,17,17,0.12)]">
+                <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]">Catering</p>
+                <h2 className="mt-4 font-serif-display text-4xl">Built for parties, office orders, family events, and custom menus.</h2>
+                <div className="mt-6 space-y-4 text-sm leading-8 text-white/78">
+                  <p>
+                    Alongside the restaurant's Mexican favorites, the catering message should feel broader and more flexible. The team can help guests plan food for casual office lunches, birthdays, family celebrations, community events, and private gatherings of many sizes.
+                  </p>
+                  <p>
+                    They have catered beyond standard taqueria fare before, and can work with guests on different styles of cuisine depending on the event, service format, and group preferences.
+                  </p>
+                  <p>
+                    The best flow here is simple: call directly or send an inquiry with guest count, event type, timing, and any cuisine ideas so the team can guide the menu from there.
+                  </p>
+                </div>
+              </div>
               <GoogleMap />
             </div>
 
             <div className="space-y-6">
               <ContactForm />
               <div className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-[color:var(--color-charcoal)] p-8 text-white">
-                <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]">Social & Ordering</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]">Ordering, Social, and Event Inquiries</p>
                 <p className="mt-4 text-lg leading-8 text-white/75">
-                  The original website links guests to online ordering and major social platforms. Those links are preserved here so guests can move smoothly from discovery to action.
+                  Guests can use online ordering for quick pickups, or reach out directly for larger catering conversations, custom cuisine requests, and event planning.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   {site.socialLinks.map((item) => (
@@ -91,6 +106,14 @@ export default function ContactPage() {
                       {item.label}
                     </Link>
                   ))}
+                  <Link
+                    href={site.orderUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:border-[color:var(--color-gold)] hover:text-white"
+                  >
+                    Order Online
+                  </Link>
                 </div>
               </div>
             </div>

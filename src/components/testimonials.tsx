@@ -2,17 +2,23 @@ import { testimonials } from "@/data/site"
 import { PageShell } from "@/components/page-shell"
 import { SectionHeading } from "@/components/section-heading"
 
-export function Testimonials() {
+export function Testimonials({
+  heading = "What guests remember most.",
+  description = "Real impressions from diners who keep coming back for the food, warmth, and atmosphere.",
+}: {
+  heading?: string
+  description?: string
+}) {
   return (
     <section className="bg-[color:var(--color-surface)] py-20 sm:py-24">
       <PageShell>
         <SectionHeading
           eyebrow="Guest Love"
-          title="An experience designed to feel flavorful, energetic, and memorable."
-          description="A hospitality-led dining experience should feel as polished as the food tastes."
+          title={heading}
+          description={description}
           align="center"
         />
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.name}
@@ -24,7 +30,7 @@ export function Testimonials() {
               <p className="mt-4 text-base leading-8 text-[color:var(--color-muted)]">
                 {testimonial.quote}
               </p>
-              <p className="mt-8 text-sm font-semibold uppercase tracking-[0.3em] text-[color:var(--color-red)]">
+              <p className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[color:var(--color-red)]">
                 {testimonial.name}
               </p>
             </article>

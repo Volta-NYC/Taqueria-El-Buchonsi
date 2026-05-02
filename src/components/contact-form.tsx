@@ -18,6 +18,17 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-white p-8 shadow-[0_20px_60px_rgba(17,17,17,0.06)]"
     >
+      <div className="mb-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-red)]">
+          Event Inquiry
+        </p>
+        <h2 className="mt-3 font-serif-display text-4xl text-[color:var(--color-ink)]">
+          Tell us about your catering needs.
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-[color:var(--color-muted)]">
+          Share your date, guest count, service style, and any cuisine ideas so the team can start shaping the right menu.
+        </p>
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2 text-sm font-medium text-[color:var(--color-ink)]">
           <span>Name</span>

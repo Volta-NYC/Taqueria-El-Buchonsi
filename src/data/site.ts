@@ -86,18 +86,32 @@ export const featuredDishes = [
 export const testimonials = [
   {
     quote:
-      "The tacos have real character, the room feels lively, and every plate hits with fresh flavor.",
-    name: "Local Regular",
+      "I came with my compadre to have a good time with my friend Rey, a good friend for years, owner of El Buchon. The truth is we had a great time, the treatment with the boys and cooks was very friendly, I really recommend the octopus tacos and the nachos with chorizo, the fresh waters especially the horchata one, you will not be disappointed, thank you very much Friend Rey, we will see you there very soon another day.",
+    name: "Carmen R.",
   },
   {
     quote:
-      "Birria, aguas frescas, and a warm welcome. It feels like a neighborhood staple with premium energy.",
-    name: "Weekend Guest",
+      "First time going there I had a grilled chicken ceaser salad. It was fresh and the chicken was delicious and soft. I would go back",
+    name: "Claire L.",
   },
   {
     quote:
-      "The food photography drew us in, but the handmade tortillas and layered salsas are what keep us coming back.",
-    name: "First-Time Visitor",
+      "Nice cozy environment….very friendly!! Food was good. Had bacon egg and cheese on everything bagel with coffee. Prices ate good …..took my mother and environment was good fir her.",
+    name: "Cynthia Cofano",
+  },
+  {
+    quote:
+      "Food is So good! employees are very nice And the whole place is Amazing Really Recommend to go Here",
+    name: "Denise G",
+  },
+  {
+    quote:
+      "Cute place. Good prices and the food was well made. Service was kind and helpful.",
+    name: "Dee S.",
+  },
+  {
+    quote: "Best spot around",
+    name: "Tony S.",
   },
 ]
 

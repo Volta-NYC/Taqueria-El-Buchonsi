@@ -7,6 +7,7 @@ import { GoogleMap } from "@/components/google-map"
 import { PageHero } from "@/components/page-hero"
 import { PageShell } from "@/components/page-shell"
 import { SectionHeading } from "@/components/section-heading"
+import { Testimonials } from "@/components/testimonials"
 import { Button } from "@/components/ui/button"
 import { site } from "@/data/site"
 
@@ -61,6 +62,11 @@ export default function AboutPage() {
           </div>
         </PageShell>
       </section>
+
+      <Testimonials
+        heading="The neighborhood trust is already there."
+        description="This fits best alongside the story of the restaurant: real guest reactions that reinforce the warmth, consistency, and range people remember."
+      />
 
       <section className="bg-[color:var(--color-surface)] py-16 sm:py-20">
         <PageShell>
