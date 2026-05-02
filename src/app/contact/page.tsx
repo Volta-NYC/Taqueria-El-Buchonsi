@@ -24,10 +24,10 @@ export default function ContactPage() {
       />
       <section className="bg-[color:var(--color-cream)] py-16 sm:py-20">
         <PageShell>
-          <div className="grid gap-8 xl:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid gap-8 xl:grid-cols-[1.08fr_0.92fr]">
             <div className="grid gap-6">
-              <div className="grid gap-6 lg:grid-cols-2">
-                <div className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-white p-8 shadow-[0_20px_60px_rgba(17,17,17,0.06)]">
+              <div className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-white p-8 shadow-[0_20px_60px_rgba(17,17,17,0.06)] lg:p-10">
+                <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
                   <div className="flex items-start gap-4">
                     <div className="rounded-2xl bg-[color:var(--color-surface)] p-3 text-[color:var(--color-red)]">
                       <MapPin size={22} />
@@ -36,57 +36,62 @@ export default function ContactPage() {
                       <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-red)]">
                         Visit
                       </p>
-                      <h2 className="mt-3 font-serif-display text-3xl text-[color:var(--color-ink)]">
+                      <h2 className="mt-3 font-serif-display text-3xl text-[color:var(--color-ink)] sm:text-4xl">
                         Stop by the taqueria.
                       </h2>
+                      <p className="mt-4 max-w-md text-sm leading-8 text-[color:var(--color-muted)]">
+                        All the essentials in one place for a smooth visit, from direct contact and directions to late-night hours.
+                      </p>
                     </div>
                   </div>
-                  <div className="mt-8 space-y-6 text-sm leading-7 text-[color:var(--color-muted)]">
+                  <div className="grid gap-6 sm:grid-cols-2">
                     <div>
                       <p className="font-medium text-[color:var(--color-ink)]">Address</p>
-                      <p className="mt-1">{site.address}</p>
+                      <p className="mt-2 text-sm leading-7 text-[color:var(--color-muted)]">{site.address}</p>
                     </div>
                     <div>
                       <p className="font-medium text-[color:var(--color-ink)]">Phone</p>
-                      <Link href={`tel:${site.phoneRaw}`} className="mt-1 block transition hover:text-[color:var(--color-red)]">
+                      <Link href={`tel:${site.phoneRaw}`} className="mt-2 block text-sm leading-7 text-[color:var(--color-muted)] transition hover:text-[color:var(--color-red)]">
                         {site.phone}
                       </Link>
                     </div>
-                    <div>
+                    <div className="sm:col-span-2">
                       <p className="font-medium text-[color:var(--color-ink)]">Hours</p>
-                      <div className="mt-3 space-y-3">
+                      <div className="mt-3 grid gap-3 sm:grid-cols-2">
                         {site.hours.map((entry) => (
-                          <div key={entry.label} className="flex items-center justify-between gap-4 border-b border-[color:var(--color-sand-line)] pb-3">
-                            <span>{entry.label}</span>
-                            <span className="font-medium text-[color:var(--color-ink)]">{entry.value}</span>
+                          <div key={entry.label} className="rounded-2xl border border-[color:var(--color-sand-line)] bg-[color:var(--color-surface)]/50 px-4 py-4 text-sm">
+                            <p className="text-[color:var(--color-muted)]">{entry.label}</p>
+                            <p className="mt-1 font-medium text-[color:var(--color-ink)]">{entry.value}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
-                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <Link href={site.orderUrl} target="_blank" rel="noreferrer">
-                      <Button>Order Online</Button>
-                    </Link>
-                    <Link href={site.directionsUrl} target="_blank" rel="noreferrer">
-                      <Button variant="outline">Open in Maps</Button>
-                    </Link>
-                  </div>
                 </div>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <Link href={site.orderUrl} target="_blank" rel="noreferrer">
+                    <Button>Order Online</Button>
+                  </Link>
+                  <Link href={site.directionsUrl} target="_blank" rel="noreferrer">
+                    <Button variant="outline">Open in Maps</Button>
+                  </Link>
+                </div>
+              </div>
 
-                <div className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-[color:var(--color-charcoal)] p-8 text-white shadow-[0_20px_60px_rgba(17,17,17,0.12)]">
+              <div className="rounded-[2rem] border border-[color:var(--color-sand-line)] bg-[color:var(--color-charcoal)] p-8 text-white shadow-[0_20px_60px_rgba(17,17,17,0.12)] lg:p-10">
+                <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                   <div className="flex items-start gap-4">
                     <div className="rounded-2xl bg-white/10 p-3 text-[color:var(--color-gold)]">
                       <UtensilsCrossed size={22} />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]">Catering</p>
-                      <h2 className="mt-3 font-serif-display text-3xl leading-tight">
+                      <h2 className="mt-3 font-serif-display text-3xl leading-tight sm:text-4xl">
                         Clear, flexible catering for events of all kinds.
                       </h2>
                     </div>
                   </div>
-                  <div className="mt-8 space-y-4 text-sm leading-8 text-white/78">
+                  <div className="space-y-4 text-sm leading-8 text-white/78">
                     <p>
                       From office lunches and birthdays to family gatherings and community events, the team can help shape service around the size and style of the occasion.
                     </p>
@@ -96,14 +101,14 @@ export default function ContactPage() {
                     <p>
                       The best starting point is a quick inquiry with guest count, date, service style, and any menu ideas so the team can guide the next step.
                     </p>
+                    <Link
+                      href={`tel:${site.phoneRaw}`}
+                      className="inline-flex items-center gap-2 pt-2 text-sm font-semibold text-[color:var(--color-gold)] transition hover:translate-x-1"
+                    >
+                      Call to discuss catering
+                      <ArrowRight size={16} />
+                    </Link>
                   </div>
-                  <Link
-                    href={`tel:${site.phoneRaw}`}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-gold)] transition hover:translate-x-1"
-                  >
-                    Call to discuss catering
-                    <ArrowRight size={16} />
-                  </Link>
                 </div>
               </div>
 
