@@ -12,15 +12,7 @@ import { cn } from "@/lib/utils"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : ""
@@ -32,12 +24,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className={cn(
-          "sticky top-0 z-50 border-b border-white/10 transition-all duration-300",
-          isScrolled
-            ? "bg-[rgba(17,17,17,0.88)] backdrop-blur-xl"
-            : "bg-[rgba(17,17,17,0.55)] backdrop-blur-md"
-        )}
+        className="sticky top-0 z-50 border-b border-white/10 bg-[color:var(--color-charcoal)] transition-all duration-300"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
