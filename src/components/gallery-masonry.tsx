@@ -37,9 +37,13 @@ export function GalleryMasonry({
 
         <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {visibleImages.map((image, index) => (
-            <button
+            <motion.button
               key={image.src}
               type="button"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: (index % 3) * 0.1, ease: "easeOut" }}
               className="group mb-5 block w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 text-left"
               onClick={() => setActiveIndex(index)}
             >
@@ -60,7 +64,7 @@ export function GalleryMasonry({
                   <p className="mt-2 text-lg font-medium text-white">{image.alt}</p>
                 </div>
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
       </PageShell>

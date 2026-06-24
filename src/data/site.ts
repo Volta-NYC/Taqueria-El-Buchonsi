@@ -87,7 +87,7 @@ export const featuredDishes = [
     description:
       "A smooth, cooling rice drink that balances the heat and richness of the menu beautifully.",
     price: "$6",
-    image: "/drink.jpg",
+    image: "/taqueria-el-buchon-foods-01.jpg",
   },
 ]
 

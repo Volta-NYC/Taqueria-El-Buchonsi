@@ -45,9 +45,57 @@ a {
 
 img {
   display: block;
+  transition: opacity 0.3s ease;
 }
 
 ::selection {
-  background: rgba(198, 40, 40, 0.18);
+  background: rgba(198, 40, 40, 0.2);
   color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(198, 40, 40, 0.6);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scroll-driven fade-up (CSS native, Chromium 115+) */
+@supports (animation-timeline: scroll()) {
+  .scroll-fade-up {
+    animation: fadeUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Gold shimmer utility for accent lines / spans */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold) 0%,
+    #fde68a 40%,
+    var(--color-gold) 60%,
+    var(--color-orange) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3.5s linear infinite;
 }

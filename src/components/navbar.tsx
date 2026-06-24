@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -21,10 +22,22 @@ export function Navbar() {
     }
   }, [isOpen])
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <>
       <header
-        className="sticky top-0 z-50 border-b border-white/10 bg-[color:var(--color-charcoal)] transition-all duration-300"
+        className={cn(
+          "sticky top-0 z-50 border-b transition-all duration-500",
+          scrolled
+            ? "border-white/14 bg-[rgba(17,17,17,0.88)] backdrop-blur-md shadow-[0_4px_32px_rgba(0,0,0,0.28)]"
+            : "border-white/10 bg-[color:var(--color-charcoal)]"
+        )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">

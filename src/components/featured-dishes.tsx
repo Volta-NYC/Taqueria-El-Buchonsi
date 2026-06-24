@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion"
 
 import { featuredDishes } from "@/data/site"
 import { PageShell } from "@/components/page-shell"
@@ -10,16 +13,27 @@ export function FeaturedDishes() {
   return (
     <section className="bg-[color:var(--color-cream)] py-20 sm:py-24">
       <PageShell>
-        <SectionHeading
-          eyebrow="Featured Specials"
-          title="Signature dishes that set the tone for the whole table."
-          description="A focused lineup of favorites to introduce the menu's balance of comfort, freshness, and bolder premium flavors."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <SectionHeading
+            eyebrow="Featured Specials"
+            title="Signature dishes that set the tone for the whole table."
+            description="A focused lineup of favorites to introduce the menu's balance of comfort, freshness, and bolder premium flavors."
+          />
+        </motion.div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {featuredDishes.map((dish) => (
-            <article
+          {featuredDishes.map((dish, index) => (
+            <motion.article
               key={dish.name}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: index * 0.12, ease: "easeOut" }}
               className="group overflow-hidden rounded-[2rem] border border-[color:var(--color-sand-line)] bg-white shadow-[0_20px_60px_rgba(17,17,17,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[rgba(198,40,40,0.22)] hover:shadow-[0_24px_80px_rgba(17,17,17,0.12)]"
             >
               <div className="relative h-72 overflow-hidden">
@@ -49,7 +63,7 @@ export function FeaturedDishes() {
                   <ArrowUpRight size={16} />
                 </Link>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </PageShell>
