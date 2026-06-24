@@ -58,7 +58,7 @@ export default function AboutPage() {
                 <Image src="/taqueria-el-buchon-foods-09.jpg" alt="Taqueria dining atmosphere" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
               </div>
               <div className="relative h-72 overflow-hidden rounded-[2rem] sm:mt-12 sm:h-[28rem]">
-                <Image src="/taqueria-el-buchon-foods-05.jpg" alt="Taqueria plated dish" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+                <Image src="/taqueria-el-buchon-foods-05.jpg" alt="House salsas in Jarritos bottles" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
               </div>
             </div>
           </div>

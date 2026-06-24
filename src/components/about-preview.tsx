@@ -13,7 +13,7 @@ export function AboutPreview() {
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-72 overflow-hidden rounded-[2rem] sm:h-80">
-              <Image src="/taqueria-el-buchon-foods-13.jpg" alt="Restaurant interior" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+              <Image src="/taqueria-el-buchon-foods-13.jpg" alt="Jarritos Lime soda" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
             </div>
             <div className="relative mt-10 h-80 overflow-hidden rounded-[2rem] sm:h-96">
               <Image src="/taqueria-el-buchon-foods-14.jpg" alt="Restaurant signature dish" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
