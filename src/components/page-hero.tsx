@@ -25,12 +25,12 @@ export function PageHero({
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-38"
+            className="object-cover opacity-68"
             style={{ objectPosition: backgroundPosition }}
           />
         </div>
       ) : null}
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(17,17,17,0.94),rgba(17,17,17,0.72),rgba(17,17,17,0.9)),radial-gradient(circle_at_top_left,rgba(217,119,6,0.24),transparent_32%),radial-gradient(circle_at_right,rgba(198,40,40,0.18),transparent_28%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(17,17,17,0.76),rgba(17,17,17,0.42),rgba(17,17,17,0.7)),radial-gradient(circle_at_top_left,rgba(217,119,6,0.18),transparent_34%),radial-gradient(circle_at_right,rgba(198,40,40,0.12),transparent_30%)]" />
       <PageShell>
         <div className="relative max-w-4xl">
           <div className="mb-6 flex items-center gap-4">

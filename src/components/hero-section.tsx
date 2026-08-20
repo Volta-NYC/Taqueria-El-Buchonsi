@@ -14,14 +14,14 @@ export function HeroSection() {
     <section className="relative isolate overflow-hidden bg-[color:var(--color-charcoal)] text-white">
       <div className="absolute inset-0">
         <Image
-          src="/taqueria-el-buchon-foods-08.jpg"
+          src="/el-buchon-interior-hero.jpg"
           alt="Taqueria El Buchon hero dining image"
           fill
           priority
-          className="object-cover opacity-45"
+          className="object-cover opacity-75"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(217,119,6,0.35),_transparent_40%),linear-gradient(135deg,rgba(17,17,17,0.95),rgba(17,17,17,0.58),rgba(17,17,17,0.9))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(217,119,6,0.2),_transparent_42%),linear-gradient(135deg,rgba(17,17,17,0.78),rgba(17,17,17,0.34),rgba(17,17,17,0.68))]" />
       </div>
 
       <div className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(to_bottom,transparent,rgba(248,244,236,0.14),rgba(248,244,236,0.28))]" />

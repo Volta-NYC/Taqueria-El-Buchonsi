@@ -179,6 +179,11 @@ export const galleryImages: Array<{
   alt: string
   category: GalleryCategory
 }> = [
+  { src: "/el-buchon-interior-hero.jpg", alt: "Taqueria El Buchon dining room with flags and wood booths", category: "Interior" },
+  { src: "/el-buchon-interior-dining.jpg", alt: "Interior dining area with warm wood tables and colorful flags", category: "Interior" },
+  { src: "/el-buchon-interior-booths.jpg", alt: "Wood booths and turquoise interior wall inside Taqueria El Buchon", category: "Interior" },
+  { src: "/el-buchon-interior-counter.jpg", alt: "Restaurant counter and dining room at Taqueria El Buchon", category: "Interior" },
+  { src: "/el-buchon-exterior-mural.jpg", alt: "Taqueria El Buchon exterior mural and storefront", category: "Interior" },
   { src: "/taqueria-el-buchon-foods-01.jpg", alt: "Fresh tacos plated for service", category: "Food" },
   { src: "/taqueria-el-buchon-foods-02.jpg", alt: "Grilled burrito with chihuahua cheese and salsa", category: "Food" },
   { src: "/taqueria-el-buchon-foods-03.jpg", alt: "Signature tacos with vibrant toppings", category: "Food" },
